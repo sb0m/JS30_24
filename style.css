@@ -1,0 +1,211 @@
+:root {
+    --color-bg-dark: #131425;
+    --color-bg-dark-60: rgba(19,20,37,0.6);
+    --color-bg-dark-80: rgba(19,20,37,0.8);
+    --color-highlight1: #3d88f1;
+    --color-highlight1_dark: #17345c;
+    --color-highlight1_light: #84b7ff;
+    --color-highlight2: #ca4f09;
+    --color-highlight2_dark:  #6d2b05;
+    --color-highlight2_light: #ff7d32;
+    --color-highlight3: #27ae72;
+    --color-highlight3_dark:  #135739;
+    --color-highlight3_light: #39ffa7;
+    --color-font-light: #ecf3fa;
+    --color-font-dark: #253148;
+}
+
+/*a:active,*/
+a:active,
+a:focus,
+input:focus {
+    border: 0;
+    outline: 0;
+}
+
+input::-moz-focus-inner, button::-moz-focus-inner { 
+  border: 0; 
+}
+
+html {
+    background-color: var(--color-bg-dark);
+    font: 16px 'Open Sans', sans-serif;
+    line-height: 1.3em;
+    color: var(--color-font-light);
+    width: 100%;
+    overflow-x:hidden;
+}
+
+body {
+    height:100%;
+    margin:0;
+    /*background-image: url("bg.JPG");*/
+    background-size: cover;
+}
+
+.teaser {
+    position: relative;
+    text-align: center;
+    height: 30%;
+    background-image: url("teaser.JPG");
+}
+
+/*wenn h1 hier margin-top nicht auf 0 gesetzt und teaser kein padding hat: margin alles von oben runter
+* UND so den Text nach unten setzten
+*/
+.teaser h1 {
+    font: 2.5em 'coolvetica';
+    margin-top: 0em;
+    position: absolute;
+    bottom: 0;
+    right:1em;
+    color: var(--color-highlight3);
+    text-shadow: 3px 3px 1px var(--color-highlight3_dark);
+}
+
+.wrapper {
+    text-align: justify;
+    padding: 2% 5% 5% 5%;
+    background-color: var(--color-bg-dark);
+    margin: 0% 5% 0% 5%;
+    transition: all 1s;
+}
+
+/*Hier könnte man nochwas machen, wenn es sticky nav ist, zb padding kleiner oder sowas*/
+.fixed-nav .wrapper {
+
+}
+
+nav {
+    margin-bottom: 2px;
+}
+
+.fixed-nav nav {
+    width: 100%;
+    position: fixed;
+    top:0;
+}
+
+a {
+    color: var(--color-highlight2_light);
+    font-size: 1.0em;
+    text-decoration: none;
+}
+
+a.bold {
+    font-family: 'coolvetica';
+    color: var(--color-highlight2_light);
+    font-size: 1.0em;
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 600;
+    line-height: 1em;
+    font-size: 1.2em;
+}
+
+ul {
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: var(--color-bg-dark);
+    box-shadow: 2px 2px 0 var(--color-highlight2);
+}
+
+/*Prevent from marking the text wehn clicking the checkboxes*/
+li {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    background-color: var(--color-bg-dark);
+    padding: 1em;
+    margin-right: 1em;
+    flex-grow: 1;
+}
+
+li.logo {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: all 1s;
+    background-image: url("logo.JPG");
+    flex-grow: 0;
+}
+
+.fixed-nav li.logo {
+width: 10%;
+opacity: 1;
+/*    flex-grow: 1;*/
+}
+
+.flexbox {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 5px 10px 5px;
+}
+
+input, button{
+    color: var(--color-bg-dark);
+    background: var(--color-highlight1);
+    box-shadow: 3px 3px var(--color-highlight1_dark);
+    border: 2px solid  transparent;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 0.8em;
+    cursor: auto;
+    padding: 8px;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+§
+/*Form Input text field*/
+input[type="text"] {
+    margin: 3px;
+    border: 0px solid  transparent;
+    box-shadow: none;
+}
+
+input[type="text"]:focus, input[type="text"]:active{
+    border: 3px solid  var(--color-highlight1_light);
+    margin: 0px;
+}
+
+/*Form Button*/
+input[type="submit"], button{
+    cursor: pointer;
+}
+
+input[type="submit"]:active, button:active{
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px transparent;
+}
+
+/*Checkboxes*/
+input[type=checkbox]{
+    display: none;
+    margin-right: 25px;
+}
+
+input[type=checkbox] + label {
+    cursor: pointer;
+}
+
+input[type=checkbox] + label:before {
+    content: '\2718';
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+/*input[type=checkbox] + label
+*/
+input[type=checkbox]:checked + label:before {
+    content: '\2714';
+}
